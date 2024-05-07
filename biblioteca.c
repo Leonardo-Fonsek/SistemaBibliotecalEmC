@@ -21,42 +21,42 @@
 int main()
 {
     //SISTEMA PARA CADASTRO DE LIVROS
-    setlocale(LC_ALL, "Portuguese"); //CORREÇÃO DO SISTEMA PARA A LINGUA PORTUGUESA
-    //Variáveis para o case 1.
+    setlocale(LC_ALL, "Portuguese"); //CORREÃ‡ÃƒO DO SISTEMA PARA A LINGUA PORTUGUESA
+    //VariÃ¡veis para o case 1.
     int continuar, continuarPrincipal, opcao, qtdeLivrosCadastrados, i, c;
     int anoPublicado[MAX_LIVROS];
     int quantidade[MAX_LIVROS];
     char titulo[MAX_LIVROS][MAX_TITULO_LEN];
     char autor[MAX_LIVROS][MAX_AUTOR_LEN];
     char categoria[MAX_LIVROS][MAX_CATEGORIA_LEN];
-    int temLivro = 0; //Variável para verificar se algum livro foi cadastrado antes de realizar uma consulta de livros
+    int temLivro = 0; //VariÃ¡vel para verificar se algum livro foi cadastrado antes de realizar uma consulta de livros
 
-    //Vaariáveis para o case 2
+    //VaariÃ¡veis para o case 2
     char nomeUsuario[MAX_USUARIOS][MAX_NOMEUSUARIO_LEN];
     char cpfUsuario[MAX_USUARIOS][MAX_CPFUSUARIO_LEN];
     char telefoneUsuario[MAX_USUARIOS][MAX_TELEFONE_LEN];
     int qtdeUsuariosCadastrados;
     int continuarCase2;
 
-    //Variáveis para o case 3
+    //VariÃ¡veis para o case 3
     int l,j, dataDevolucao;
     char tituloAlugar[MAX_LIVROS][MAX_TITULOALUGAR_LEN];
     char nomeUsuarioEmprestarLivro;
 
 
-    //Variavies para o case 4
+    //VariÃ¡vies para o case 4
     char infoConsulta[MAX_LIVROS];
     int opcaoCase4 = 1;
 
 
     continuarPrincipal = 1;
     while(continuarPrincipal){
-        printf("\n                                            ------ESCOLHA UMA OPÇÃO------\n");
+        printf("\n                                            ------ESCOLHA UMA OPÃ‡ÃƒO------\n");
         printf("\n                                                 1: CADASTRAR LIVRO\n");
-        printf("                                                2: CADASTRAR USUÁRIOS\n");
-        printf("                                               3: EMPRÉSTIMO DE LIVROS\n");
+        printf("                                                2: CADASTRAR USUÃRIOS\n");
+        printf("                                               3: EMPRÃ‰STIMO DE LIVROS\n");
         printf("                                                4: CONSULTA DE LIVROS\n");
-        printf("                                               5: CONSULTA DE USUÁRIOS\n");
+        printf("                                                 5: ENCERRAR PROGRAMA\n");
         printf("\n                                        -------------------------------------\n");
         scanf("%d", &opcao);
         system("cls");
@@ -71,16 +71,16 @@ int main()
                 scanf("%d", &qtdeLivrosCadastrados);
                 system("cls");
 
-        for(i = 0; i < qtdeLivrosCadastrados; i++){ //FOR - Loop para armazenar os dados inseridos em cada variável com "[1]" no final dela.
+        for(i = 0; i < qtdeLivrosCadastrados; i++){ //FOR - Loop para armazenar os dados inseridos em cada variÃ¡vel com "[1]" no final dela.
                 cadastro_livro:
                     printf("\n                                            ------CADASTRO DE LIVROS------\n");
                         printf("                                Insira o nome do autor: ");
                         scanf(" %[^\n]", &autor[i]);
                         fflush(stdin);
-                    printf("                                Insira o título do %d livro: ", i + 1);
+                    printf("                                Insira o tÃ­tulo do  livro %d: ", i + 1);
                         scanf(" %[^\n]", &titulo[i]);
                         fflush(stdin);
-                    printf("                                Ano de publicação: ");
+                    printf("                                Ano de publicaÃ§Ã£o: ");
                         scanf("%d", &anoPublicado[i]);
                         fflush(stdin);
                     printf("                                Categoria: ");
@@ -101,7 +101,7 @@ int main()
                     printf("                                   Categoria.......: %s\n", categoria[i]);
                     printf("                                   Quantidade......: %d\n", quantidade[i]);
 
-                    printf("\n                                   Os dados estão corretos?\n                                     1: SIM        2: NÃO\n");
+                    printf("\n                                   Os dados estÃ£o corretos?\n                                     1: SIM        2: NÃƒO\n");
                     scanf("%d", &continuar);
 
                     if(continuar != 1){
@@ -112,7 +112,7 @@ int main()
                         break;
                     } else {
                         system("cls");
-                        printf("\n                                                ------RELATÓRIO------\n");
+                        printf("\n                                                ------RELATÃ“RIO------\n");
                         printf("                                     O livro %s foi cadastrado com sucesso!\n\n", titulo[i]);
                         temLivro = 1;
                         Sleep(4000);
@@ -125,18 +125,18 @@ int main()
          case 2:
             do {
                 printf("                           ---------------------------------------------------------");
-                printf("\n                                       Quantos usuários deseja cadastrar?");
+                printf("\n                                       Quantos usuÃ¡rios deseja cadastrar?");
                 printf("\n                           ---------------------------------------------------------\n");
                 scanf("%d", &qtdeUsuariosCadastrados);
                 system("cls");
 
         for(i = 0; i < qtdeUsuariosCadastrados; i++){
                 cadastro_usuarios:
-                    printf("\n                                            ------CADASTRO DE USUÁRIOS------\n");
-                        printf("                                Insira o nome do usuário: ");
+                    printf("\n                                            ------CADASTRO DE USUÃRIOS------\n");
+                        printf("                                Insira o nome do usuÃ¡rio: ");
                         scanf(" %[^\n]", &nomeUsuario[i]);
                         fflush(stdin);
-                    printf("                                Insira o CPF do usuário:  ");
+                    printf("                                Insira o CPF do usuÃ¡rio:  ");
                         scanf("%s", &cpfUsuario[i]);
                         fflush(stdin);
                     printf("                                Insira o telefone do usuario: ");
@@ -147,12 +147,12 @@ int main()
                     Sleep(1000);
 
                     printf("\n");
-                    printf("                                            ------DADOS DO USUÁRIO------  \n");
+                    printf("                                            ------DADOS DO USUÃRIO------  \n");
                     printf("\n                                   Nome.............: %s\n", nomeUsuario[i]);
                     printf("                                   Cpf...............: %s\n", cpfUsuario[i]);
                     printf("                                   Telefone..........: %s\n", telefoneUsuario[i]);
 
-                    printf("\n                                   Os dados estão corretos?\n                                     1: SIM        2: NÃO\n");
+                    printf("\n                                   Os dados estÃ£o corretos?\n                                     1: SIM        2: NÃƒO\n");
                     scanf("%d", &continuarCase2);
 
                     if(continuarCase2 != 1){
@@ -163,7 +163,7 @@ int main()
                         break;
                     } else {
                         system("cls");
-                        printf("\n                                                ------RELATÓRIO------\n");
+                        printf("\n                                                ------RELATÃ“RIO------\n");
                         printf("                                     O usuario %s foi cadastrado com sucesso!\n\n", nomeUsuario[i]);
                         temLivro = 1;
                         Sleep(4000);
@@ -188,14 +188,14 @@ int main()
 
                                 printf("\n\n                                                   LIVRO '%s'                           ", titulo[l]);
                                 printf("\n                                            Autor.................: %s\n", autor[l]);
-                                printf("                                            Título................: %s\n", titulo[l]);
-                                printf("                                            Ano de publicação.....: %d\n", anoPublicado[l]);
+                                printf("                                            TÃ­tulo................: %s\n", titulo[l]);
+                                printf("                                            Ano de publicaÃ§Ã£o.....: %d\n", anoPublicado[l]);
                                 printf("                                            Categoria.............: %s\n", categoria[l]);
-                                printf("                                            Quantidade disponível.: %d\n", quantidade[l]);
+                                printf("                                            Quantidade disponÃ­vel.: %d\n", quantidade[l]);
                                 printf("                   ---------------------------------------------------------------------------------");
                     }
 
-                        printf("\n                                          INSIRA O TÍTULO DO LIVRO QUE DESEJA: ");
+                        printf("\n                                          INSIRA O TÃTULO DO LIVRO QUE DESEJA: ");
                         scanf(" %[^\n]", &tituloAlugar);
                         system("cls");
 
@@ -212,10 +212,10 @@ int main()
 
                                 printf("                                            Insira o nome do usuario: ");
                                 scanf(" %[^\n]", &nomeUsuarioEmprestarLivro);
-                                printf("\n                                          Insira o dia de devolução do livro: ");
+                                printf("\n                                          Insira o dia de devoluÃ§Ã£o do livro: ");
                                 scanf("%d", &dataDevolucao);
 
-                                printf("\n                                   Empréstimo do livro '%s' realizado com sucesso!\n", titulo[j]);
+                                printf("\n                                   EmprÃ©stimo do livro '%s' realizado com sucesso!\n", titulo[j]);
                                 Sleep(4000);
                                 system("cls");
                                 livroEncontrado = 1;
@@ -223,7 +223,7 @@ int main()
                             } //fecha FOR
 
                             if (!livroEncontrado) {
-                                printf("\n                                   Nenhum livro encontrado! Insira o título novamente! \n");
+                                printf("\n                                   Nenhum livro encontrado! Insira o tÃ­tulo novamente! \n");
                                 Sleep(4000);
                                 system("cls");
                                 goto pesquisa_Titulo;
@@ -242,13 +242,15 @@ int main()
                 }
             do {
                 printf("             --------------------------------------------------------------------------------------------");
-                printf("\n                      Insira o nome do autor, título ou categoria do livro que deseja consultar");
+                printf("\n                      Insira o nome do autor, tÃ­tulo ou categoria do livro que deseja consultar");
                 printf("\n             --------------------------------------------------------------------------------------------\n");
                 printf("             Insira aqui: ");
                 scanf(" %[^\n]", &infoConsulta);
 
+                int livroConsultado = 0;
+
                 for(c = 0; c < qtdeLivrosCadastrados; c++){
-                    if(strcmp(autor[c], infoConsulta) == 0){
+                    if(strcmp(autor[c], infoConsulta) == 0 || strcmp(titulo[c], infoConsulta) == 0 || strcmp(categoria[c], infoConsulta) == 0){
                         system("cls");
                         Sleep(2000);
                         printf("                              ---------------------------------------------------------");
@@ -256,41 +258,22 @@ int main()
                         printf("\n                              ---------------------------------------------------------\n\n");
                         printf("                                                 LIVRO ENCONTRADO!\n\n");
                         printf("                                        Autor.................: %s\n", autor[c]);
-                        printf("                                        Título................: %s\n", titulo[c]);
-                        printf("                                        Ano de publicação.....: %d\n", anoPublicado[c]);
+                        printf("                                        TÃ­tulo................: %s\n", titulo[c]);
+                        printf("                                        Ano de publicaÃ§Ã£o.....: %d\n", anoPublicado[c]);
                         printf("                                        Categoria.............: %s\n", categoria[c]);
-                        printf("                                        Quantidade disponível.: %d", quantidade[c]);
-                    } else if(strcmp(titulo[c], infoConsulta) == 0){
-                        system("cls");
-                        Sleep(2000);
-                        printf("                              ---------------------------------------------------------");
-                        printf("\n                                               CONSULTA DE LIVROS");
-                        printf("\n                              ---------------------------------------------------------\n\n");
-                        printf("                                                 LIVRO ENCONTRADO!\n\n");
-                        printf("                                        Autor.................: %s\n", autor[c]);
-                        printf("                                        Título................: %s\n", titulo[c]);
-                        printf("                                        Ano de publicação.....: %d\n", anoPublicado[c]);
-                        printf("                                        Categoria.............: %s\n", categoria[c]);
-                        printf("                                        Quantidade disponível.: %d", quantidade[c]);
-                    } else if(strcmp(categoria[c], infoConsulta) == 0) {
-                        system("cls");
-                        Sleep(2000);
-                        printf("                              ---------------------------------------------------------");
-                        printf("\n                                               CONSULTA DE LIVROS");
-                        printf("\n                              ---------------------------------------------------------\n\n");
-                        printf("                                                 LIVRO ENCONTRADO!\n\n");
-                        printf("                                        Autor.................: %s\n", autor[c]);
-                        printf("                                        Título................: %s\n", titulo[c]);
-                        printf("                                        Ano de publicação.....: %d\n", anoPublicado[c]);
-                        printf("                                        Categoria.............: %s\n", categoria[c]);
-                        printf("                                        Quantidade disponível.: %d", quantidade[c]);
-                    } else {
-                        Sleep(2000);
-                        printf("Livro indisponível!");
-                        break;
+                        printf("                                        Quantidade disponÃ­vel.: %d", quantidade[c]);
+                        livroConsultado = 1;
+
                     }
                     }//fecha FOR
-                        printf("\n\n                                       Deseja consultar mais um livro?\n                                             1: SIM        2: NÃO\n");
+
+                    if(!livroConsultado){
+                        Sleep(2000);
+                        printf("Livro indisponÃ­vel!");
+
+                    }
+
+                        printf("\n\n                                       Deseja consultar mais um livro?\n                                             1: SIM        2: NÃƒO\n");
                         scanf("%d", &opcaoCase4);
                         system("cls");
 
@@ -301,15 +284,10 @@ int main()
                 //fecha "else" do if(temLivro == 0
                 } while(opcaoCase4); //Fecha while
                 break; //break case 4
-
+         default:
+            continuarPrincipal = 0;
+            break;
                 }// fecha switch
     }// fecha whilePrincipal
         return 0;
     }
-
-
-
-
-
-
-
